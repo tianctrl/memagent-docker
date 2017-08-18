@@ -15,7 +15,7 @@ RUN mkdir /usr/lib64/
 RUN ln -svf /usr/lib/libevent* /usr/lib64/
 RUN cp /lib/x86_64-linux-gnu/libm.so.6 /usr/lib64/libm.a
 
-RUN cd /magent \
- && make
+WORKDIR /magent
+RUN make
 
 RUN cp /magent/magent /bin/
