@@ -9,7 +9,7 @@ RUN wget https://cloud.github.com/downloads/libevent/libevent/libevent-2.0.19-st
  && ./configure --prefix=/usr/ \
  && make && make install
 
-COPY magent /
+COPY magent /magent
 
 RUN mkdir /usr/lib64/
 RUN ln -svf /usr/lib/libevent* /usr/lib64/
