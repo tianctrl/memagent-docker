@@ -1,5 +1,8 @@
 FROM ubuntu:16.04
 
+RUN apt-get update \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y wget gcc make
+
 RUN wget https://cloud.github.com/downloads/libevent/libevent/libevent-2.0.19-stable.tar.gz \
  && tar zxvf libevent-2.0.19-stable.tar.gz \
  && cd libevent-2.0.19-stable \
