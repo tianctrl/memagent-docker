@@ -10,6 +10,7 @@ RUN wget https://cloud.github.com/downloads/libevent/libevent/libevent-2.0.19-st
  && make && make install
 
 COPY magent /magent
+COPY run.sh /
 
 RUN mkdir /usr/lib64/
 RUN ln -svf /usr/lib/libevent* /usr/lib64/
@@ -19,3 +20,6 @@ WORKDIR /magent
 RUN make
 
 RUN cp /magent/magent /bin/
+
+RUN chmod +x /run.sh
+ENTRYPOINT ["/run.sh"]
